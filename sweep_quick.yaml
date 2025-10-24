@@ -1,0 +1,36 @@
+program: Train.py
+project: cs6886-vgg6-cifar10
+entity: mahee-velu-iitm   # (optional) uncomment to pin the entity
+
+method: bayes
+metric:
+  name: val_acc
+  goal: maximize
+
+parameters:
+  activation:
+    values: ["relu", "silu", "gelu", "tanh", "sigmoid"]
+  optimizer:
+    values: ["sgd", "sgd_nesterov", "adam", "adagrad", "rmsprop", "nadam"]
+  batch_size:
+    values: [128, 256]
+  epochs:
+    values: [20]
+
+  # Use log_uniform_values when specifying real limits (not ln-exponents)
+  lr:
+    distribution: log_uniform_values
+    min: 0.001
+    max: 0.1
+
+  weight_decay:
+    distribution: log_uniform_values
+    min: 1e-5
+    max: 1e-3
+
+  scheduler:
+    values: ["cosine"]
+  autoaugment:
+    values: [false, true]
+  seed:
+    values: [42]

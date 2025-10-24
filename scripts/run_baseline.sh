@@ -1,0 +1,11 @@
+python Train.py \
+  --project cs6886-vgg6-cifar10 \
+  --activation relu \
+  --optimizer sgd \
+  --lr 0.1 \
+  --momentum 0.9 \
+  --weight_decay 0.0005 \
+  --batch_size 128 \
+  --epochs 50 \
+  --scheduler cosine \
+  --seed 42
