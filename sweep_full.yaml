@@ -1,5 +1,5 @@
 program: Train.py
-project: cs6886-vgg6-cifar10
+project: sweep-full
 entity: mahee-velu-iitm   # (optional) uncomment to pin the entity
 
 method: bayes
