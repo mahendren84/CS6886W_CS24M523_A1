@@ -9,9 +9,10 @@ python Train.py \
   --epochs 100 \
   --scheduler cosine \
   --autoaugment True \
-  --entity null \
+  --entity mahee-velu-iitm \
   --gamma 0.1 \
   --label_smoothin 0 \
   --num_workers 2 \
   --step_size 30 \
   --seed 42
+  
