@@ -8,11 +8,10 @@ python Train.py \
   --batch_size 128 \
   --epochs 100 \
   --scheduler cosine \
-  --auto_augment True \
+  --autoaugment True \
   --entity null \
   --gamma 0.1 \
   --label_smoothin 0 \
   --num_workers 2 \
   --step_size 30 \
   --seed 42
-  
