@@ -6,3 +6,6 @@ wandb
 PyYAML
 scikit-learn
 rich
+Python 3.12.12
+
+
