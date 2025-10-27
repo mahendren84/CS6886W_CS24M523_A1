@@ -91,12 +91,6 @@ import wandb; wandb.login()   # follow the link → paste API key
   - **Parallel‑coordinates**: Project → *Add Chart* → *Parallel Coordinates*; axes: `activation`, `optimizer`, `batch_size`, `epochs`, `lr`, `weight_decay`; color: `val_acc` → **Export** (PNG)  
   - **Val‑Acc vs Step**: pick a run (best/representative) → export `val_acc_vs_step` scatter  
   - **Train/Val curves**: export `train_loss`, `val_loss`, `train_acc`, `val_acc`
-- **Scripted PNG export (no rerun):**
-  ```bash
-  !bash scripts/make_plots.sh <YOUR_WANDB_ENTITY>
-  # outputs in ./plots/:
-  # parallel_coordinates.png, val_acc_vs_step.png, curves_loss.png, curves_acc.png
-  ```
 
 **Q4 — Evaluate stored model**
 ```bash
