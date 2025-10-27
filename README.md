@@ -24,15 +24,13 @@ CS6886W_CS24M523_A1/
 ├─ Model.py              # Q1/Q2a: VGG6 (pluggable activation)
 ├─ Train.py              # Q1b/Q1c + Q2 + Q3 + Q5: training, W&B logging, checkpointing
 ├─ Test.py               # Q4: load stored model and print test accuracy
-├─ MakePlots.py          # Q3: script to export required plots from existing W&B runs
 ├─ sweep.yaml            # Q2/Q3a: Bayesian sweep configuration
 ├─ scripts/
 │  ├─ run_baseline.sh    # Q1 baseline run
 │  ├─ run_sweep.sh       # Q2 sweep creation + agent instructions
 │  ├─ test_model.sh      # Q4 evaluate stored best model
 │  └─ make_plots.sh      # Q3 export plots to ./plots/
-├─ checkpoints/          # saved model(s) (best.pt) – created by Train.py
-└─ plots/                # exported PNGs – created by MakePlots.py
+└─ checkpoints/          # saved model(s) (best.pt) – created by Train.py
 ```
 
 ---
@@ -178,17 +176,6 @@ wandb sweep sweep.yaml
 wandb agent --count 20 <entity>/cs6886-vgg6-cifar10/<SWEEP_ID>
 ```
 
-**Q3 — Export plots from existing runs**
-```powershell
-# Windows
-.\.venv\bin\python MakePlots.py --entity <YOUR_WANDB_ENTITY> --project cs6886-vgg6-cifar10 --top_k 50 --outdir plots
-```
-```bash
-# Mac/Linux
-python MakePlots.py --entity <YOUR_WANDB_ENTITY> --project cs6886-vgg6-cifar10 --top_k 50 --outdir plots
-```
-- PNGs saved in `./plots/`
-
 **Q4 — Evaluate stored model**
 ```powershell
 # Windows
@@ -229,7 +216,6 @@ python Train.py \
 
 - Generate all plots from W&B **without training**:
   ```bash
-  python MakePlots.py --entity <YOUR_WANDB_ENTITY> --project cs6886-vgg6-cifar10 --top_k 50 --outdir plots
   ```
 - (Optional) Download the **existing** stored model from W&B Files tab via API:
   ```python
